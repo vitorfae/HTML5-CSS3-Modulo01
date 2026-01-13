@@ -9,6 +9,41 @@
 <body>
     <h1>Imagem dinâmica</h1>
     <p>Tente abrir esse site em vários dispositivos diferentes ou simplesmente aumente e diminua o tamanho do seu navegador.</p>
-    
+    <!--Cuidar com o bounce rate, onde a galera clica e vaza por conta de o site não ser tão bom-->
+    <picture>
+        <source media="(max-width: 750px)" srcset="imagens/foto-p.png" type="image/png">
+        <source media="(max-width: 1050px)" srcset="imagens/foto-m.png" type="image/png">
+        <img src="imagens/foto-g.png" alt="Imagem flexível">
+    </picture>
+    <!--Sempre fazer da imagem base que deseja ser apresentada primeiro e depois ir para os próximos casos. Ai vai adicionando os sources. Tem como fazer com máx e min como os exemplos. -->
+    <!--Ordem influencia muito nos resultados. Sempre em escalas.-->
+    <!--
+    <picture>
+        <source media="(min-width: 1030px)" srcset="imagens/foto-g.png" type="image/png">
+        <source media="(min-width: 710px)" srcset="imagens/foto-m.png" type="image/png">
+        <img src="imagens/foto-p.png" alt="Imagem flexível">
+    </picture>
+    -->
+    <hr><br>
+    <h1>Reproduzindo Áudio</h1>
+    <p>Vamos aprender a reproduzir áudios em HTML5.</p>
+    <!--Para ele começar a reproduzir de sozinho tem que colocar o (autoplay)-->
+    <!--Para aparecer o tempo e para iniciar o som é só usar o atributo controls.-->
+    <h2>happy-mistake</h2>
+    <audio src="midia/happy-mistake.mp3" controls autoplay ></audio>
+    <h2>Guanacast</h2>
+    <audio src="midia/guanacast-33.mp3" controls></audio>
+    <hr>
+    <p>testes:</p>
+    <!--Aqui no (preload) é o seguinte. Usando o atributo "auto", ele só vai carregar o site depois de todos os audios dessa tag audio forem baixados-->
+    <!--no "metadata" traz apenas as informações e o essencial, irá baixar quando clicar-->
+    <!--no "none" não vai baixar nada-->
+    <!--loop serve para reiniciar quando chegar no final-->
+    <audio preload="metadata" autoplay controls loop> <!--autoplay não funcionou direito assim-->
+        <source src="midia/guanacast-33.mp3" type="audio/mpeg">
+        <source src="midia/guanacast-33.ogg" type="audio/ogg">
+        <source src="midia/guanacast-33.wav" type="audio/wav"><!--Dificilmente usado por ser um arquivo muito pesado-->
+    </audio>
+    <p>Infelizmente seu navegador não consegue reproduzir áudio. <a href="midia/guanacast-33.mp3" download="midia/guanacast-33">Clique aqui para baixar o arquivo</a></p>
 </body>
 </html>
